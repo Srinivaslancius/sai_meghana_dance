@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="">
-    <title>LOANMAMU</title>
+    <title>SAIMEGHANA DANCE SCHOOL</title>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.html">
     <!-- <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">  -->
@@ -74,7 +74,7 @@
             <form autocomplete="off" method="post" action="login-script.php" data-toggle="validator">
               <div class="form-group">
                 <label for="form-control-1">Email address</label>
-                <input type="email" class="form-control" id="form-control-2" placeholder="Email" name="admin_email" data-error="Please enter a valid email address." required>
+                <input type="email" class="form-control" id="form-control-2" placeholder="Email" name="admin_email" data-error="Please enter a valid email address." required autofocus>
                 <div class="help-block with-errors"></div>
               </div>
               <div class="form-group">

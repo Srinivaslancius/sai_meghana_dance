@@ -61,60 +61,6 @@
                 <span class="menu-text">Content Pages</span>
               </a>
             </li>
-            <li class="with-sub">
-              <a href="#" aria-haspopup="true">
-                <span class="menu-icon">
-                  <i class="zmdi zmdi-account-circle zmdi-hc-fw"></i>
-                </span>
-                <span class="menu-text">Careers</span>
-              </a>
-              <ul class="sidebar-submenu collapse">
-                <li class="menu-subtitle">Careers</li>
-                <li class="<?php if($page_name == 'current_openings.php' || $page_name == 'add_current_openings.php' || $page_name == 'edit_current_openings.php') { echo "active"; } ?>"><a href="current_openings.php">Current Openings</a></li> 
-                <li class="<?php if($page_name == 'posted_resumes.php' || $page_name == 'add_posted_resumes.php' || $page_name == 'edit_posted_resumes.php') { echo "active"; } ?>"><a href="posted_resumes.php">Posted Resumes</a></li>
-              </ul>
-            </li>
-            <li  class="<?php if($page_name == 'testimonials.php' || $page_name == 'add_testominials.php' || $page_name == 'edit_testimonials.php') { echo "active"; } ?>">
-              <a href="testimonials.php" aria-haspopup="true">
-                <span class="menu-icon">
-                   <i class="zmdi zmdi-comments  zmdi-hc-fw"></i>
-                </span> 
-                <span class="menu-text">Testimonials</span>
-              </a>
-            </li>
-            <li  class="<?php if($page_name == 'seo.php' || $page_name == 'add_seo.php' || $page_name == 'edit_seo.php') { echo "active"; } ?>">
-              <a href="seo.php" aria-haspopup="true">
-                <span class="menu-icon">
-                   <i class="zmdi zmdi-collection-item  zmdi-hc-fw"></i>
-                </span> 
-                <span class="menu-text">SEO</span>
-              </a>
-            </li>
-            <li  class="<?php if($page_name == 'services.php' || $page_name == 'add_services.php' || $page_name == 'edit_services.php') { echo "active"; } ?>">
-              <a href="services.php" aria-haspopup="true">
-                <span class="menu-icon">
-                   <i class="zmdi zmdi-wrench zmdi-hc-fw"></i>
-                </span> 
-                <span class="menu-text">Services</span>
-              </a>
-            </li>
-            <li  class="<?php if($page_name == 'service_details.php' || $page_name == 'add_service_details.php' || $page_name == 'edit_service_details.php') { echo "active"; } ?>">
-              <a href="service_details.php" aria-haspopup="true">
-                <span class="menu-icon">
-                   <i class="zmdi zmdi-comments  zmdi-hc-fw"></i>
-                </span> 
-                <span class="menu-text">Service Details</span>
-              </a>
-            </li>
-            <li  class="<?php if($page_name == 'faqs.php' || $page_name == 'add_faqs.php' || $page_name == 'edit_faqs.php') { echo "active"; } ?>">
-              <a href="faqs.php" aria-haspopup="true">
-                <span class="menu-icon">
-                   <i class="zmdi zmdi-pin-help zmdi-hc-fw"></i>
-                </span> 
-                <span class="menu-text">FAQ'S</span>
-              </a>
-            </li>
-            
             <li  class="<?php if($page_name == 'customer_enqueries.php') { echo "active"; } ?>">
               <a href="customer_enqueries.php" aria-haspopup="true">
                 <span class="menu-icon">
