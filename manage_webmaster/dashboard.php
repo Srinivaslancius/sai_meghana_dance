@@ -32,7 +32,7 @@
               <div class="widget widget-tile-2 bg-primary m-b-30">
                 <div class="wt-content p-a-20 p-b-50">
                   <div class="wt-title">Gallery</div>
-                  <div class="wt-number"><?php echo 3?></div>
+                  <div class="wt-number"><?php echo getRowsCount('photo_gallery')?></div>
                 </div>
                 <div class="wt-icon">
                   <i class="zmdi zmdi-image"></i>

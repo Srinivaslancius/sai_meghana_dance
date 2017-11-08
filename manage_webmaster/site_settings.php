@@ -76,7 +76,7 @@
                     <div class="help-block with-errors"></div>
                   </div>
 
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label for="form-control-2" class="control-label">Facebook Link</label>
                     <input type="url" name="fb_link" class="form-control" id="form-control-2" placeholder="Facebook Link" data-error="Please enter a valid Facebook Link." value="<?php echo $getSiteSettingsData['fb_link'];?>" required>
                     <div class="help-block with-errors"></div>
@@ -92,7 +92,7 @@
                     <label for="form-control-2" class="control-label">Linkdin Link</label>
                     <input type="url" name="gplus_link" class="form-control" id="form-control-2" placeholder="Youtube Link" data-error="Please enter a valid Youtube Link." value="<?php echo $getSiteSettingsData['gplus_link'];?>" required>
                     <div class="help-block with-errors"></div>
-                  </div>
+                  </div> -->
 
                   <div class="form-group">
                     <label for="form-control-2" class="control-label">Mobile</label>
