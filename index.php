@@ -123,50 +123,15 @@
 
     </div> 
     <!--Start welcome section-->
-   
+   <?php $getIndex = getIndividualDetails(3,'content_pages','id')?>
     <div class="sections-wrapper">
        <section class="sec-pad">
 	   
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-sm-12">
-                        <h1>
-                          <center><h3 style="color:black">WELCOME TO<span class="color-pink"> SAI MEGHNA DANCE SCHOOL</span></h3></center>
-                        </h1>
-						<div class="row">
-						<div class="col-sm-5">
-						<img src="images/gallery/11.jpg">
-						</div>
-						<div class="col-sm-7">
-                        <p style="text-align:justify">
-                          
-				 Kuchipudi is a classical dance which was originated in the 12th century
-						in Kuchipudi village of Andhra Pradesh. This splendid dance form is
-						profoundly aesthetic and the experience of watching it is most
-						exhilarating. Strictly adhering to the rules laid down in Bharata’s
-						Natya Shastra ( science of Dancing) and Nandikeshwara’s Abhinaya
-						Darpam (mirror of expresiion), Kuchipudi has all the salient features of
-						a classical dance. All it’s compositions are set to Carnatic music and
-						the songs are written in Telugu language.</p>
-					
-					<p style="text-align:justify">
-					Kuchipudi is a perfect balance
-						between 3 aspects – Nritta, Nritya and Naatya each being equivalent in
-						nature. The Nritta is a rhythmic sequence that concludes a song or
-						averse, the Nritya is where the rhythmic passages are followed by
-						interpretation and Naatya is a complete dance drama with various
-						characters and a story line. The charm of Kuchipudi lies in its
-						graceful movements, intricate footwork, complicated rhythmic patterns
-						and the rapid tempo and thus  distinguishes it from the  other dance
-						forms.</p>
-						</div>
-					</div>
-						
-						
+                        <?php echo $getIndex['description']; ?>
                     </div>
-
-                 
-
                 </div>
 
             </div>

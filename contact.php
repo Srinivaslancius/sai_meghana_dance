@@ -15,7 +15,7 @@
 </head>
 <body>
     <!--header start-->
-	<section id="topbar">
+    <section id="topbar">
        <?php include_once 'top_header.php'; ?>
     </section>
     <header>
@@ -42,7 +42,7 @@
     <div class="sections-wrapper sec-pad blog-back-bg">
         <div class="container">
             <div class="section-title title-padd-btm">
-			  <center><h3 style="color:black">GET IN<span class="color-pink"> TOUCH</span></h3></center>
+              <center><h3 style="color:black">GET IN<span class="color-pink"> TOUCH</span></h3></center>
                 
              <!--   <p class="wd-50">
                     Its this founding principle that has helped our organisation as well as our clients become a defining force in the industry. 
@@ -52,11 +52,11 @@
             <div class="contact-form-container">              
                 <div class="row">
                     <div class="col-md-7 col-sm-6 col-xs-12 pull-right">
-                       <form action=""> 
-                            <p><input type="text" name="name" placeholder="Name"></p>
-                            <p><input type="text" name="email" placeholder="Email"></p>
-                            <p><input type="text" name="subject" placeholder="Subject"></p>
-                            <p><textarea name="comments" placeholder="Comments"></textarea></p>
+                       <form action="" method="post"> 
+                            <p><input type="text" name="name" placeholder="Name" required></p>
+                            <p><input type="email" name="email" placeholder="Email" required></p>
+                            <p><input type="text" name="subject" placeholder="Subject" required></p>
+                            <p><textarea name="comments" placeholder="Comments" required></textarea></p>
                             <button type="submit" class="theme-btn btn-lg" style="background-color:#c90000">
                             <span>Submit Now</span>
                             </button>

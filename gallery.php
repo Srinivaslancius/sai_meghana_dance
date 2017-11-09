@@ -57,7 +57,8 @@
                     <span>Lavanya with her Students</span>
                 </li>
             </ul>
-
+            <?php $sql = "SELECT * FROM photo_gallery WHERE status = 0 AND category_id = 1"; 
+            $res = $conn->query($sql);?>
             <div class="row masonary-layout filter-layout">
                  <div class="col-md-4 col-sm-4 col-xs-12 filter-item">
                     <div class="single-item">
@@ -77,167 +78,36 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-sm-4 col-xs-12 filter-item Indoor-Services">
-                    <div class="single-item">
-                        <div class="img-box">
-                            <img src="img/lavanya/2.jpg" alt="Awesome Image"/>
-                            <div class="overlay">
-                                <div class="inner">
-                                    <div class="social">
-                                        <a href="img/lavanya/2.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                       
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
+                <?php while ($row = $res->fetch_assoc()) { ?>
                  <div class="col-md-4 col-sm-4 col-xs-12 filter-item Indoor-Services">
                     <div class="single-item">
                         <div class="img-box">
-                           <img src="img/lavanya/3.jpg" alt="Awesome Image"/>
+                            <img src="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row['image'] ?>" alt="Awesome Image"/>
                             <div class="overlay">
                                 <div class="inner">
                                     <div class="social">
-                                        <a href="img/lavanya/3.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                       
+                                        <a href="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row['image'] ?>" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
                                     </div>
                                     
                                 </div>
                             </div>
+                            
                         </div>
                         
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-12 filter-item Indoor-Services">
-                    <div class="single-item">
-                        <div class="img-box">
-                            <img src="img/lavanya/6.jpg" alt="Awesome Image"/>
-                            <div class="overlay">
-                                <div class="inner">
-                                    <div class="social">
-                                        <a href="img/lavanya/6.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                      
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                 <div class="col-md-4 col-sm-4 col-xs-12 filter-item Indoor-Services">
-                    <div class="single-item">
-                        <div class="img-box">
-                            <img src="img/lavanya/4.jpg" alt="Awesome Image"/>
-                            <div class="overlay">
-                                <div class="inner">
-                                    <div class="social">
-                                        <a href="img/lavanya/4.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                        
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                 <div class="col-md-4 col-sm-4 col-xs-12 filter-item Indoor-Services">
-                     <div class="single-item">
-                        <div class="img-box">
-                            <img src="img/lavanya/5.jpg" alt="Awesome Image"/>
-                            <div class="overlay">
-                                <div class="inner">
-                                    <div class="social">
-                                        <a href="img/lavanya/5.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                      
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-				<div class="col-md-4 col-sm-4 col-xs-12 filter-item Indoor-Services">
-                     <div class="single-item">
-                        <div class="img-box">
-                            <img src="img/lavanya/7.jpg" alt="Awesome Image"/>
-                            <div class="overlay">
-                                <div class="inner">
-                                    <div class="social">
-                                        <a href="img/lavanya/7.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                      
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-				<div class="col-md-4 col-sm-4 col-xs-12 filter-item Indoor-Services">
-                     <div class="single-item">
-                        <div class="img-box">
-                            <img src="img/lavanya/8.jpg" alt="Awesome Image"/>
-                            <div class="overlay">
-                                <div class="inner">
-                                    <div class="social">
-                                        <a href="img/lavanya/8.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                       
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-				<div class="col-md-4 col-sm-4 col-xs-12 filter-item Indoor-Services">
-                     <div class="single-item">
-                        <div class="img-box">
-                            <img src="img/lavanya/9.jpg" alt="Awesome Image"/>
-                            <div class="overlay">
-                                <div class="inner">
-                                    <div class="social">
-                                        <a href="img/lavanya/9.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                      
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-				<div class="col-md-4 col-sm-4 col-xs-12 filter-item Indoor-Services">
-                     <div class="single-item">
-                        <div class="img-box">
-                            <img src="img/lavanya/10.jpg" alt="Awesome Image"/>
-                            <div class="overlay">
-                                <div class="inner">
-                                    <div class="social">
-                                        <a href="img/lavanya/10.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                      
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
+                <?php } ?>
+
+                <?php $sql = "SELECT * FROM photo_gallery WHERE status = 0 AND category_id = 2"; 
+                    $res = $conn->query($sql); while ($row = $res->fetch_assoc()) { ?>
 				<div class="col-md-4 col-sm-4 col-xs-12 filter-item Old-Wiring-Faults">
                      <div class="single-item">
                         <div class="img-box">
-                            <img src="img/stdnt_pic/1.jpg" alt="Awesome Image"/>
+                            <img src="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row['image'] ?>" alt="Awesome Image"/>
                             <div class="overlay">
                                 <div class="inner">
                                     <div class="social">
-                                        <a href="img/stdnt_pic/1.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
+                                        <a href="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row['image'] ?>" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
                                        
                                     </div>
                                     
@@ -247,99 +117,19 @@
                         
                     </div>
                 </div>
-				<div class="col-md-4 col-sm-4 col-xs-12 filter-item Old-Wiring-Faults">
-                     <div class="single-item">
-                        <div class="img-box">
-                            <img src="img/stdnt_pic/2.jpg" alt="Awesome Image"/>
-                            <div class="overlay">
-                                <div class="inner">
-                                    <div class="social">
-                                        <a href="img/stdnt_pic/2.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                       
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-				<div class="col-md-4 col-sm-4 col-xs-12 filter-item Old-Wiring-Faults">
-                     <div class="single-item">
-                        <div class="img-box">
-                            <img src="img/stdnt_pic/3.jpg" alt="Awesome Image"/>
-                            <div class="overlay">
-                                <div class="inner">
-                                    <div class="social">
-                                        <a href="img/stdnt_pic/3.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                      
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-				<div class="col-md-4 col-sm-4 col-xs-12 filter-item Old-Wiring-Faults">
-                     <div class="single-item">
-                        <div class="img-box">
-                            <img src="img/stdnt_pic/4.jpg" alt="Awesome Image"/>
-                            <div class="overlay">
-                                <div class="inner">
-                                    <div class="social">
-                                        <a href="img/stdnt_pic/4.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                       
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-				<div class="col-md-4 col-sm-4 col-xs-12 filter-item Old-Wiring-Faults">
-                     <div class="single-item">
-                        <div class="img-box">
-                            <img src="img/stdnt_pic/5.jpg" alt="Awesome Image"/>
-                            <div class="overlay">
-                                <div class="inner">
-                                    <div class="social">
-                                        <a href="img/stdnt_pic/5.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                       
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-				<div class="col-md-4 col-sm-4 col-xs-12 filter-item Old-Wiring-Faults">
-                     <div class="single-item">
-                        <div class="img-box">
-                            <img src="img/stdnt_pic/6.jpg" alt="Awesome Image"/>
-                            <div class="overlay">
-                                <div class="inner">
-                                    <div class="social">
-                                        <a href="img/stdnt_pic/6.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                       
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
+                <?php } ?>
+
+
+                <?php $sql = "SELECT * FROM photo_gallery WHERE status = 0 AND category_id = 3"; 
+                    $res = $conn->query($sql); while ($row = $res->fetch_assoc()) { ?>
 				<div class="col-md-4 col-sm-4 col-xs-12 filter-item Out-door-repairing">
                      <div class="single-item">
                         <div class="img-box">
-                            <img src="img/lavanya_wid_stnd/1.jpg" alt="Awesome Image"/>
+                            <img src="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row['image'] ?>" alt="Awesome Image"/>
                             <div class="overlay">
                                 <div class="inner">
                                     <div class="social">
-                                        <a href="img/lavanya_wid_stnd/1.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
+                                        <a href="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row['image'] ?>" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
                                        
                                     </div>
                                     
@@ -349,59 +139,7 @@
                         
                     </div>
                 </div>
-				<div class="col-md-4 col-sm-4 col-xs-12 filter-item Out-door-repairing">
-                     <div class="single-item">
-                        <div class="img-box">
-                            <img src="img/lavanya_wid_stnd/2.jpg" alt="Awesome Image"/>
-                            <div class="overlay">
-                                <div class="inner">
-                                    <div class="social">
-                                        <a href="img/lavanya_wid_stnd/2.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                      
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-				<div class="col-md-4 col-sm-4 col-xs-12 filter-item Out-door-repairing">
-                     <div class="single-item">
-                        <div class="img-box">
-                            <img src="img/lavanya_wid_stnd/3.jpg" alt="Awesome Image"/>
-                            <div class="overlay">
-                                <div class="inner">
-                                    <div class="social">
-                                        <a href="img/lavanya_wid_stnd/3.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                       
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-				<div class="col-md-4 col-sm-4 col-xs-12 filter-item Out-door-repairing">
-                     <div class="single-item">
-                        <div class="img-box">
-                            <img src="img/lavanya_wid_stnd/4.jpg" alt="Awesome Image"/>
-                             <div class="overlay">
-                                <div class="inner">
-                                    <div class="social">
-                                        <a href="img/lavanya_wid_stnd/4.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                
-                
-                
+                <?php } ?>
                 
             </div><!-- /.row -->
         </div><!-- /.container -->
