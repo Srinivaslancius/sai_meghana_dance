@@ -11,6 +11,7 @@
     $twitter_link = $_POST['twitter_link'];
     $gplus_link = $_POST['gplus_link'];
     $mobile = $_POST['mobile'];
+    $open_timings = $_POST['open_timings'];
     $footer_text = $_POST['footer_text'];
     $address = $_POST['address'];
     if($_FILES["logo"]["name"]!='') {
@@ -30,7 +31,7 @@
         //Send parameters for img val,tablename,clause,id,imgpath for image ubnlink from folder
 
         if (move_uploaded_file($_FILES["logo"]["tmp_name"], $target_file)) {
-            $sql = "UPDATE `site_settings` SET admin_title = '$admin_title', email='$email', fb_link='$fb_link', twitter_link='$twitter_link', gplus_link='$gplus_link', mobile='$mobile', logo = '$logo', footer_text='$footer_text', address='$address' WHERE id = '$id' ";
+            $sql = "UPDATE `site_settings` SET admin_title = '$admin_title', email='$email', fb_link='$fb_link', twitter_link='$twitter_link', gplus_link='$gplus_link', mobile='$mobile', open_timings='$open_timings', logo = '$logo', footer_text='$footer_text', address='$address' WHERE id = '$id' ";
             if($conn->query($sql) === TRUE){
                echo "<script type='text/javascript'>window.location='site_settings.php?msg=success'</script>";
             } else {
@@ -41,7 +42,7 @@
             echo "Sorry, there was an error uploading your file.";
         }
     }  else {
-        $sql = "UPDATE `site_settings` SET admin_title = '$admin_title', email='$email', fb_link='$fb_link', twitter_link='$twitter_link', gplus_link='$gplus_link', mobile='$mobile',footer_text='$footer_text', address='$address' WHERE id = '$id' ";
+        $sql = "UPDATE `site_settings` SET admin_title = '$admin_title', email='$email', fb_link='$fb_link', twitter_link='$twitter_link', gplus_link='$gplus_link', mobile='$mobile', open_timings='$open_timings',footer_text='$footer_text', address='$address' WHERE id = '$id' ";
         if($conn->query($sql) === TRUE){
            echo "<script type='text/javascript'>window.location='site_settings.php?msg=success'</script>";
         } else {
@@ -114,14 +115,20 @@
                   </div>
 
                   <div class="form-group">
+                    <label for="form-control-2" class="control-label">Open Timings</label>
+                    <input type="text" name="open_timings" class="form-control" id="form-control-2" placeholder="Open Timings" data-error="Please enter Open Timings." value="<?php echo $getSiteSettingsData['open_timings'];?>" required>
+                    <div class="help-block with-errors"></div>
+                  </div>
+
+                  <div class="form-group">
                     <label for="form-control-2" class="control-label">Footer Text</label>
-                    <input type="text" name="footer_text" class="form-control" id="form-control-2" placeholder="Footer Text" data-error="Please enter a valid Mobile." value="<?php echo $getSiteSettingsData['footer_text'];?>" required>
+                    <input type="text" name="footer_text" class="form-control" id="form-control-2" placeholder="Footer Text" data-error="Please enter Footer Text." value="<?php echo $getSiteSettingsData['footer_text'];?>" required>
                     <div class="help-block with-errors"></div>
                   </div>
 
                   <div class="form-group">
                     <label for="form-control-4" class="control-label">Address</label>
-                    <textarea type="text" name="address" class="form-control" id="form-control-2" placeholder="Address" data-error="Please enter a valid Mobile." required><?php echo $getSiteSettingsData['address'];?></textarea>
+                    <textarea type="text" name="address" class="form-control" id="form-control-2" placeholder="Address" data-error="Please enter Address." required><?php echo $getSiteSettingsData['address'];?></textarea>
                   </div>
                   <button type="submit" name="submit" value="Submit" class="btn btn-primary btn-block">Submit</button>
                 </form>
