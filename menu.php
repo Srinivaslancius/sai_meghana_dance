@@ -3,11 +3,12 @@
 			<div class="row">
 			<div class="col-sm-6">
                 <!-- Start Header Navigation -->
+                <?php $getSiteSettings = getIndividualDetails(1,'site_settings','id'); ?>
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/resource/logo.png" class="logo logo-scrolled" alt="" style="height:77px"></a>
+                    <a class="navbar-brand" href="index.php"><img src="<?php echo $base_url . 'uploads/logo/'.$getSiteSettingsData['logo'] ?>" class="logo logo-scrolled" alt="" style="height:77px"></a>
                 </div>
 				</div>
 				<div class="col-sm-6">

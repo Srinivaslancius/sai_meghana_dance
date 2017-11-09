@@ -9,10 +9,112 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    
-
-
 </head>
+<?php
+//ob_start();
+$getSiteSettings = getIndividualDetails(1,'site_settings','id');
+if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['subject']) && !empty($_POST['comments'])) {
+$dataem = 'srinivas@lanciussolutions.com';
+//$to = "srinivas@lanciussolutions.com";
+$to = "$dataem";
+$subject = "SaiMeghana Dance Schools - Contact Us ";
+$message = "";
+$message .= "<style>
+        .body{
+    width:100% !important; 
+    margin:0 !important; 
+    padding:0 !important; 
+    -webkit-text-size-adjust:none;
+    -ms-text-size-adjust:none; 
+    background-color:#FFFFFF;
+    font-style:normal;
+    }
+    .header{
+    background-color:#c90000;
+    color:white;
+    width:100%;
+    }
+    .content{
+    background-color:#FBFCFC;
+    color:#17202A;
+    width:100%;
+    padding-top:15px;
+    padding-bottom;15px;
+    text-align:justify;
+    font-size:14px;
+    line-height:18px;
+    font-style:normal;
+    }
+    h3{
+    color: #c90000;}
+    .footer{
+    background-color:#c90000;
+    color:white;
+    width:100%;
+    padding-top:9px;
+    padding-bottom:5px;
+    }
+    .logo-responsive{
+    max-width: 100%;
+    height: auto !important;
+    }
+    @media screen and (min-width: 480px) {
+        .content{
+        width:50%;
+        }
+        .header{
+        width:50%;
+        }
+        .footer{
+        width:50%;
+        }
+        .logo-responsive{
+        max-width: 100%;
+        height: auto !important;
+        }
+    }
+    </style>";
+
+$message .= "<html><head><title>SaiMeghana Dance Schools</title></head>
+<body>
+        <div class='container header'>
+            <div class='row'>
+                <div class='col-lg-2 col-md-2 col-sm-2'>
+                </div>
+                <div class='col-lg-8 col-md-8 col-sm-8'>
+                <center><h2>SAIMEGHANA DANCE SCHOOL</h2></center>
+                </div>
+                <div class='col-lg-2 col-md-2 col-sm-2'>
+                    
+                </div>
+            </div>
+        </div>
+        <div class='container content'>
+            <h3>User Feed Back Information!</h3>
+            <h4>Name: </h4><p>".$_POST['name']."</p>
+            <h4>Email: </h4><p>".$_POST['email']."</p>
+            <h4>Email: </h4><p>".$_POST['subject']."</p>
+            <h4>Message: </h4><p>".$_POST['comments']."</p>  
+        </div>
+        <div class='container footer'>
+            <center>©2015-2017 All Rights Reserved.</center>
+        </div>
+    </body>
+</html>";
+
+echo $message; die;
+// Always set content-type when sending HTML email
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// More headers
+$headers .= 'From: <ylavanya@yahoo.com>' . "\r\n";
+// $headers .= 'Cc: myboss@example.com' . "\r\n";
+
+mail($to,$subject,$message,$headers);
+
+}
+?>
 <body>
     <!--header start-->
 	<section id="topbar">
@@ -52,11 +154,11 @@
             <div class="contact-form-container">              
                 <div class="row">
                     <div class="col-md-7 col-sm-6 col-xs-12 pull-right">
-                       <form action=""> 
-                            <p><input type="text" name="name" placeholder="Name"></p>
-                            <p><input type="text" name="email" placeholder="Email"></p>
-                            <p><input type="text" name="subject" placeholder="Subject"></p>
-                            <p><textarea name="comments" placeholder="Comments"></textarea></p>
+                       <form method="post"> 
+                            <p><input type="text" name="name" placeholder="Name" required></p>
+                            <p><input type="email" name="email" placeholder="Email" required></p>
+                            <p><input type="text" name="subject" placeholder="Subject" required></p>
+                            <p><textarea name="comments" placeholder="Comments" required></textarea></p>
                             <button type="submit" class="theme-btn btn-lg" style="background-color:#c90000">
                             <span>Submit Now</span>
                             </button>
@@ -73,9 +175,7 @@
                             <div class="tt-contact-info">
                                 <div class="simple-text">
                                     <p style="font-weight:600">
-                                        SaiMeghana Dance Schools<br>
-                                        Gachibowli,<br>
-                                        Hyderabad, India
+                                        <?php echo $getSiteSettings['address'];?>
                                     </p>
                                 </div>
                             </div>
@@ -92,7 +192,7 @@
                             <div class="tt-contact-info">
                                 <div class="simple-text">
                                     <p style="font-weight:600">
-                                        +91 120 4255611, <br>+91 120 4585611
+                                        <?php echo $getSiteSettings['mobile'];?>
                                     </p>
                                 </div>
                             </div>
@@ -107,7 +207,7 @@
                             <div class="tt-contact-info">
                                 <div class="simple-text">
                                     <p style="font-weight:600">
-                                    classicaldance@gmail.com
+                                    <?php echo $getSiteSettings['email'];?>
                                     </p>
                                 </div>
                             </div>
