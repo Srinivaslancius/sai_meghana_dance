@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html class="html">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
-
-    <title>SaiMeghana Dance School</title>
-
+    <?php include_once "head_content.php"; ?>
     <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="plugins/owl.carousel-2/assets/owl.carousel.css">
     <link rel="stylesheet" href="plugins/owl.carousel-2/assets/owl.theme.default.min.css">
