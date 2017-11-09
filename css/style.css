@@ -2228,3 +2228,9 @@ input::-webkit-input-placeholder{
   float: left;
 
 }
+.carousel-caption{
+  margin-bottom:150px;
+  text-transform:uppercase;
+  font-size:55px !important;
+  
+}

@@ -31,97 +31,40 @@
     <!--header end-->
 
     <!--Main Slider-->
-    <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line bs-slider-height" data-ride="carousel" data-pause="hover" data-interval="5000">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+         <img src="images/gallery/010.jpg" alt=""  class="slide-image"/>
+          <div class="carousel-caption">
+          <h1 data-animation="animated flipInX">Welcome to sai meghna<br>dance school</h1>
+          </div>
+        </div>
+        <div class="item">
+        <img src="images/gallery/010.jpg" alt=""  class="slide-image"/>
+          <div class="carousel-caption">
+          <h1 data-animation="animated flipInX">DANCE IS THE HIDDEN LANGUAGE<br>OF SOUL</h1>
+          </div>
+        </div>
+        <div class="item">
+        <img src="images/gallery/010.jpg" alt=""  class="slide-image"/>
+          <div class="carousel-caption">      
+          <h1 data-animation="animated flipInX">To dance is to be out of yourself. Larger, more beautiful, more powerful</h1>
+          </div>
+        </div>
+      </div>
 
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
-            <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
-            <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
-        </ol>
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
 
-        <!-- Wrapper For Slides -->
-        <div class="carousel-inner" role="listbox">
-
-            <!-- Third Slide -->
-            <div class="item active">
-
-                <!-- Slide Background -->
-                <img src="images/gallery/010.jpg" alt=""  class="slide-image"/>
-                <div class="bs-slider-overlay"></div>
-
-                <div class="container">
-                    <div class="row">
-                        <!-- Slide Text Layer -->
-
-                        <div class="slide-text slide_style_center">
-                            <h1 data-animation="animated flipInX">Welcome to sai meghna<br>dance school</h1>
-                           
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- End of Slide -->
-
-            <!-- Second Slide -->
-            <div class="item ">
-
-                <!-- Slide Background -->
-                <img src="images/gallery/210.jpg" alt=""  class="slide-image"/>
-                <div class="bs-slider-overlay"></div>
-
-                <div class="container">
-                    <div class="row">
-                        <!-- Slide Text Layer -->
-
-                        <div class="slide-text slide_style_center">
-                            <h1 data-animation="animated flipInX">DANCE IS THE HIDDEN<br>LANGUAGE OF SOUL</h1>
-                            
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- End of Slide -->
-
-            <!-- Third Slide -->
-            <div class="item">
-
-                <!-- Slide Background -->
-                <img src="images/gallery/212.jpg" alt=""  class="slide-image"/>
-                <div class="bs-slider-overlay"></div>
-
-                <div class="container">
-                    <div class="row">
-                        <!-- Slide Text Layer -->
-                        <div class="slide-text slide_style_center">
-                            <h1 data-animation="animated flipInX">To dance is to be out of yourself. Larger, more beautiful, more powerful</h1>
-  
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- End of Slide -->
-
-
-        </div><!-- End of Wrapper For Slides -->
-
-        <!-- Left Control -->
-        <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
-            <span class="fa fa-angle-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-
-        <!-- Right Control -->
-        <a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
-            <span class="fa fa-angle-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-
-    </div> 
+</div>
     <!--Start welcome section-->
    
     <div class="sections-wrapper">
