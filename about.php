@@ -26,12 +26,14 @@
     <!--header end-->
 
     <!--Page Title-->
+
+    <?php $getAboutUs = getIndividualDetails(1,'content_pages','id')?>
     <section class="page-title inner-baner2">
         <div class="container">
-            <h2>about us</h2>
+            <h2><?php echo $getAboutUs['title']; ?></h2>
             <ul class="bread-crumb clearfix">
                 <li><i class="fa fa-home"></i> <a href="index.php">Home</a></li>
-                <li class="active">about</li>
+                <li class="active"><?php echo $getAboutUs['title']; ?></li>
             </ul>
         </div>
     </section>
@@ -43,49 +45,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
-                        <h1>
-                          <h3 style="color:black">ABOUT <span class="color-pink">LAVANYA YAMMANUR</span></h3>
-                        </h1>
-                        <p style="text-align:justify">
-                          
-
-SMT. Lavanya Yammanur  daughter of Dr.p.r.Aravinda babu and smt. Vijaya
-was born and bought up in india. She is a renowned  kuchipudi
-dancer in india and in USA. She was
-trained in various dances like kuchipudi, bharatanatyam and folk from
-the age of
-5 under gurus  sri. p. Ramanjeneyalu and smt. Sharada devi. After
-getting married to sri umashankar yammanur , she moved from india to us
-. she has established  sai meghna dance school in july 2000 and even
-today continues to nurture south indian culture through her dedicated
-training
-and advocacy of kuchupudi. She received numerous awards, honours and
-citations; notable among them are "natya
-mayuri", "natya rani” and best dancer awards. She was crowned as miss
-cuddapah by ymca proddutur.
-Saimeghna dance school has put on many
-performances throughout the years in order to promote and encourage the
-growth of kuchipudi across
-USA. Since the school's inception, she has choreographed productions
-such as girija kalyanam,
-mohini bhasmasura, sri venkateswara kalyanam to name a few.</p>
- <p style="text-align:justify">Lavanya’s
-vision for kuchipudi is to present high quality performances, educate
-audiences through lecture demonstrations, and teach the art to younger
-generations to ensure the continuation of this art form for years to
-come. Cultural and charity performances have been a focus of many of
-the
-school's performances. After her extensive teaching for 13 years in USA
-smt.Lavanya was relocated to India in 2013 and continued her dance
-journey in Hyderabad. Her senior students have given kuchipudi
-rangapravesham in USA and India. Lavanya did masters in computer science
-from s.v.university tirupathi. She finished her montessori directress
-training from boulder colorado and worked as a head teacher in
-montessori school of aurora for 10 years. After moving to India she
-started pursuing her it profession and  worked as  sr sap consultant for
-IBM India.
-</p>
-
+                        <?php echo $getAboutUs['description']; ?>
                     </div>
 
                  
