@@ -10,7 +10,7 @@ if($setcon == 2) {
 	$password = "";
 	$dbname = "loanmamu";
 } else {
-	$servername = "192.168.0.114";	
+	$servername = "192.168.0.111";	
 	$username = "root";
 	$password = "root";
 	$dbname = "sai_meghana_dance";
