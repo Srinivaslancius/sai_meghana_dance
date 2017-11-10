@@ -14,7 +14,7 @@
 //ob_start();
 $getSiteSettings = getIndividualDetails(1,'site_settings','id');
 if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['subject']) && !empty($_POST['comments'])) {
-$dataem = '$getSiteSettings["email"]';
+$dataem = $getSiteSettings["email"];
 //$to = "srinivas@lanciussolutions.com";
 $to = "$dataem";
 $subject = "SaiMeghana Dance Schools - Contact Us ";
@@ -108,7 +108,7 @@ $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 // More headers
-$headers .= 'From: <$_POST["email"]>' . "\r\n";
+$headers .= 'From: ylavanya@yahoo.com' . "\r\n";
 // $headers .= 'Cc: myboss@example.com' . "\r\n";
 
 if(mail($to,$subject,$message,$headers)) {
