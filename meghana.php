@@ -24,13 +24,13 @@
         <div class="clearfix"></div>
     </header>
     <!--Page Title-->
-    <?php $getAboutUs = getIndividualDetails(2,'content_pages','id')?>
-    <section class="page-title inner-baner">
+    <?php $getMegahanaData = getIndividualDetails(2,'content_pages','id')?>    
+    <section class="page-title inner-baner" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getMegahanaData['image'] ?>);">
         <div class="container">
-            <h2><?php echo $getAboutUs['title']; ?></h2>
+            <h2><?php echo $getMegahanaData['title']; ?></h2>
             <ul class="bread-crumb clearfix">
                 <li><a href="index-2.html">Home</a></li>
-                <li class="active"><?php echo $getAboutUs['title']; ?></li>
+                <li class="active"><?php echo $getMegahanaData['title']; ?></li>
             </ul>
         </div>
     </section>
@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="team-single">
-                      <?php echo $getAboutUs['description']; ?>
+                      <?php echo $getMegahanaData['description']; ?>
                 </div>
                 <!--End Single team-->
                

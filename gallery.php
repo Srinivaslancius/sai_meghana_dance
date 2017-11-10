@@ -28,13 +28,14 @@
     <!--header end-->
 
     <!--Page Title-->
-    <section class="page-title inner-baner1">
+    <?php $getGallery = getIndividualDetails(8,'content_pages','id')?>
+    <section class="page-title inner-baner1" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getGallery['image'] ?>);">
 	
         <div class="container">
-            <h2>Gallery</h2>
+            <h2><?php echo $getGallery['title']; ?></h2>
             <ul class="bread-crumb clearfix">
                 <li><a href="index-2.html">Home</a></li>
-                <li class="active">Gallery</li>
+                <li class="active"><?php echo $getGallery['title']; ?></li>
             </ul>
         </div>
     </section>
@@ -63,7 +64,7 @@
                  <div class="col-md-4 col-sm-4 col-xs-12 filter-item">
                     <div class="single-item">
                         <div class="img-box">
-                            <img src="img/lavanya/1.jpg" alt="Awesome Image"/>
+                            <img src="uploads/photo_gallery_images/g1.jpg" alt="Awesome Image"/>
                             <div class="overlay">
                                 <div class="inner">
                                     <div class="social">
