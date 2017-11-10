@@ -26,7 +26,7 @@
     <!--Page Title-->
     <?php $getMegahanaData = getIndividualDetails(2,'content_pages','id')?>    
     <section class="page-title inner-baner" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getMegahanaData['image'] ?>);">
-        <div class="container">
+        <div class="container">            
             <h2><?php echo $getMegahanaData['title']; ?></h2>
             <ul class="bread-crumb clearfix">
                 <li><a href="index-2.html">Home</a></li>
@@ -41,8 +41,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="team-single">
-                      <?php echo $getMegahanaData['description']; ?>
+                   
+                    <div class="team-single">                      
+                        <div class="player-name text-center">
+                           <h3 style="color:black">ABOUT <span class="color-pink"> MEGHANA YAMMANUR</span></h3>
+                           <div class="row" style="padding-left:10px">
+                           <div class="col-sm-4">
+                            <?php $getMegahanaDataImg = getIndividualDetails(10,'content_pages','id')?> 
+                            <img src="<?php echo $base_url .'uploads/content_images/'.$getMegahanaDataImg['image'] ?>" alt="">
+                           </div>
+                            <?php echo $getMegahanaData['description']; ?>
+                        </div>
+                    </div>
+                </div>
                 </div>
                 <!--End Single team-->
                
