@@ -33,26 +33,25 @@
     <!--Main Slider-->
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- Wrapper for slides -->
+    <?php $getBannersData1 = getIndividualDetails(1,'banners','id');?>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-         <img src="images/gallery/010.jpg" alt=""  class="slide-image"/>
+         <img src="<?php echo $base_url . 'uploads/banner_images/'.$getBannersData1['banner'] ?>" alt=""  class="slide-image"/>
           <div class="carousel-caption">
-          <h1 data-animation="animated flipInX">Welcome to sai meghna<br>dance school</h1>
+          <h1 data-animation="animated flipInX"><?php echo $getBannersData1['title'];?></h1>
           </div>
         </div>
+        <?php $sql = 'SELECT * FROM `banners` WHERE id NOT IN (SELECT id FROM `banners` WHERE id=1)';
+        $getBanners = $conn->query($sql); while($getBannersData = $getBanners->fetch_assoc()) { ?>
         <div class="item">
-        <img src="images/gallery/010.jpg" alt=""  class="slide-image"/>
+         <img src="<?php echo $base_url . 'uploads/banner_images/'.$getBannersData['banner'] ?>" alt=""  class="slide-image"/>
           <div class="carousel-caption">
-          <h1 data-animation="animated flipInX">DANCE IS THE HIDDEN LANGUAGE<br>OF SOUL</h1>
+          <h1 data-animation="animated flipInX"><?php echo $getBannersData['title'];?></h1>
           </div>
         </div>
-        <div class="item">
-        <img src="images/gallery/010.jpg" alt=""  class="slide-image"/>
-          <div class="carousel-caption">      
-          <h1 data-animation="animated flipInX">To dance is to be out of yourself. Larger, more beautiful, more powerful</h1>
-          </div>
-        </div>
+        <?php } ?>
       </div>
+
 
       <!-- Controls -->
       <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -69,7 +68,7 @@
    <?php $getIndex = getIndividualDetails(3,'content_pages','id')?>
     <div class="sections-wrapper">
        <section class="sec-pad">
-	   
+     
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-sm-12">
