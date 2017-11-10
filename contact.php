@@ -14,7 +14,7 @@
 //ob_start();
 $getSiteSettings = getIndividualDetails(1,'site_settings','id');
 if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['subject']) && !empty($_POST['comments'])) {
-$dataem = 'srinivas@lanciussolutions.com';
+$dataem = '$getSiteSettings["email"]';
 //$to = "srinivas@lanciussolutions.com";
 $to = "$dataem";
 $subject = "SaiMeghana Dance Schools - Contact Us ";
@@ -82,7 +82,7 @@ $message .= "<html><head><title>SaiMeghana Dance Schools</title></head>
                 <div class='col-lg-2 col-md-2 col-sm-2'>
                 </div>
                 <div class='col-lg-8 col-md-8 col-sm-8'>
-                <center><h2>SAIMEGHANA DANCE SCHOOL</h2></center>
+                <center><h2>".$getSiteSettings['admin_title']."</h2></center>
                 </div>
                 <div class='col-lg-2 col-md-2 col-sm-2'>
                     
@@ -97,7 +97,7 @@ $message .= "<html><head><title>SaiMeghana Dance Schools</title></head>
             <h4>Message: </h4><p>".$_POST['comments']."</p>  
         </div>
         <div class='container footer'>
-            <center>©2015-2017 All Rights Reserved.</center>
+            <center>".$getSiteSettings['footer_text']."</center>
         </div>
     </body>
 </html>";
@@ -108,10 +108,12 @@ $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 // More headers
-$headers .= 'From: <ylavanya@yahoo.com>' . "\r\n";
+$headers .= 'From: <$_POST["email"]>' . "\r\n";
 // $headers .= 'Cc: myboss@example.com' . "\r\n";
 
-mail($to,$subject,$message,$headers);
+if(mail($to,$subject,$message,$headers)) {
+    echo "<script>alert(Thank You For Your Feed Back);</script>";
+}
 
 }
 ?>
