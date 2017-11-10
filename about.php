@@ -28,11 +28,11 @@
     <!--Page Title-->
 
     <?php $getAboutUs = getIndividualDetails(1,'content_pages','id')?>
-    <section class="page-title inner-baner2">
+    <section class="page-title inner-baner2" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getAboutUs['image'] ?>);">
         <div class="container">
             <h2><?php echo $getAboutUs['title']; ?></h2>
             <ul class="bread-crumb clearfix">
-                <li><i class="fa fa-home"></i> <a href="index.php">Home</a></li>
+                <li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
                 <li class="active"><?php echo $getAboutUs['title']; ?></li>
             </ul>
         </div>

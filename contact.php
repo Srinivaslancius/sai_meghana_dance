@@ -132,12 +132,13 @@ if(mail($to,$subject,$message,$headers)) {
     <!--header end-->
 
     <!--Page Title-->
-    <section class="page-title inner-baner3">
+    <?php $getContactData = getIndividualDetails(9,'content_pages','id')?>
+    <section class="page-title inner-baner3" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getContactData['image'] ?>);">
         <div class="container">
-            <h2>contact us</h2>
+            <h2><?php echo $getContactData['title']; ?></h2>
             <ul class="bread-crumb clearfix">
                 <li><a href="index.php">Home</a></li>
-                <li class="active">contact us</li>
+                <li class="active"><?php echo $getContactData['title']; ?></li>
             </ul>
         </div>
     </section>
