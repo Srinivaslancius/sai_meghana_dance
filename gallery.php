@@ -64,7 +64,7 @@
                  <div class="col-md-4 col-sm-4 col-xs-12 filter-item">
                     <div class="single-item">
                         <div class="img-box">
-                            <img src="img/lavanya/1.jpg" alt="Awesome Image"/>
+                            <img src="uploads/photo_gallery_images/g1.jpg" alt="Awesome Image"/>
                             <div class="overlay">
                                 <div class="inner">
                                     <div class="social">
