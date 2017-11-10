@@ -29,7 +29,7 @@
         <div class="container">            
             <h2><?php echo $getMegahanaData['title']; ?></h2>
             <ul class="bread-crumb clearfix">
-                <li><a href="index-2.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li class="active"><?php echo $getMegahanaData['title']; ?></li>
             </ul>
         </div>

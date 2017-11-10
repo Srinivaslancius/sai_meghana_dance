@@ -32,7 +32,7 @@
         <div class="container">
             <h2><?php echo $getAboutUs['title']; ?></h2>
             <ul class="bread-crumb clearfix">
-                <li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li class="active"><?php echo $getAboutUs['title']; ?></li>
             </ul>
         </div>
