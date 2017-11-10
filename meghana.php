@@ -24,9 +24,8 @@
         <div class="clearfix"></div>
     </header>
     <!--Page Title-->
-    <?php $getAboutUs = getIndividualDetails(2,'content_pages','id')?>
-    <?php $getBannersData = getIndividualDetails(6,'banners','id');?>
-    <section class="page-title inner-baner" style="background:url(<?php echo $base_url . 'uploads/banner_images/'.$getBannersData['banner'] ?>);">
+    <?php $getAboutUs = getIndividualDetails(2,'content_pages','id')?>    
+    <section class="page-title inner-baner" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getAboutUs['image'] ?>);">
         <div class="container">
             <h2><?php echo $getAboutUs['title']; ?></h2>
             <ul class="bread-crumb clearfix">
