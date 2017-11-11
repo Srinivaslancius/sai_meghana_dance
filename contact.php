@@ -14,6 +14,10 @@
 //ob_start();
 $getSiteSettings = getIndividualDetails(1,'site_settings','id');
 if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['subject']) && !empty($_POST['comments'])) {
+    
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+
 $dataem = $getSiteSettings["email"];
 //$to = "srinivas@lanciussolutions.com";
 $to = "$dataem";
@@ -91,8 +95,8 @@ $message .= "<html><head><title>SaiMeghana Dance Schools</title></head>
         </div>
         <div class='container content'>
             <h3>User Feed Back Information!</h3>
-            <h4>Name: </h4><p>".$_POST['name']."</p>
-            <h4>Email: </h4><p>".$_POST['email']."</p>
+            <h4>Name: </h4><p>".$name."</p>
+            <h4>Email: </h4><p>".$email."</p>
             <h4>Email: </h4><p>".$_POST['subject']."</p>
             <h4>Message: </h4><p>".$_POST['comments']."</p>  
         </div>
@@ -108,7 +112,7 @@ $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 // More headers
-$headers .= 'From: ylavanya@yahoo.com' . "\r\n";
+$headers .= 'From: '.$name.'<'.$email.'>'. "\r\n";
 // $headers .= 'Cc: myboss@example.com' . "\r\n";
 
 if(mail($to,$subject,$message,$headers)) {
