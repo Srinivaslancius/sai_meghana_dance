@@ -97,7 +97,7 @@ $message .= "<html><head><title>SaiMeghana Dance Schools</title></head>
             <h3>User Feed Back Information!</h3>
             <h4>Name: </h4><p>".$name."</p>
             <h4>Email: </h4><p>".$email."</p>
-            <h4>Email: </h4><p>".$_POST['subject']."</p>
+            <h4>Subject: </h4><p>".$_POST['subject']."</p>
             <h4>Message: </h4><p>".$_POST['comments']."</p>  
         </div>
         <div class='container footer'>
@@ -106,7 +106,7 @@ $message .= "<html><head><title>SaiMeghana Dance Schools</title></head>
     </body>
 </html>";
 
-//echo $message; die;
+echo $message; die;
 // Always set content-type when sending HTML email
 $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
@@ -116,7 +116,7 @@ $headers .= 'From: '.$name.'<'.$email.'>'. "\r\n";
 // $headers .= 'Cc: myboss@example.com' . "\r\n";
 
 if(mail($to,$subject,$message,$headers)) {
-    echo "<script>alert(Thank You For Your Feed Back);</script>";
+    echo  "<script>alert('Thank You For Your feedback');window.location.href('contact.php');</script>";
 }
 
 }
