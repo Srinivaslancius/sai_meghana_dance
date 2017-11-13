@@ -136,7 +136,9 @@ if(mail($to,$subject,$message,$headers)) {
     <!--header end-->
 
     <!--Page Title-->
-    <?php $getContactData = getIndividualDetails(9,'content_pages','id')?>
+    <?php $getIndex1 =getAllDataCheckActive1('content_pages','0',9);
+                                  $getContactData = $getIndex1->fetch_assoc(); ?>
+
     <section class="page-title inner-baner3" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getContactData['image'] ?>);">
         <div class="container">
             <h2><?php echo $getContactData['title']; ?></h2>

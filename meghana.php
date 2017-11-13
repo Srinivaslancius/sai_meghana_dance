@@ -24,7 +24,9 @@
         <div class="clearfix"></div>
     </header>
     <!--Page Title-->
-    <?php $getMegahanaData = getIndividualDetails(2,'content_pages','id')?>    
+    <?php $getIndex =getAllDataCheckActive1('content_pages','0',2);
+          $getMegahanaData = $getIndex->fetch_assoc(); ?>
+    ?>
     <section class="page-title inner-baner" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getMegahanaData['image'] ?>);">
         <div class="container">            
             <h2><?php echo $getMegahanaData['title']; ?></h2>
@@ -47,7 +49,8 @@
                            <h3 style="color:black">ABOUT <span class="color-pink"> MEGHANA YAMMANUR</span></h3>
                            <div class="row" style="padding-left:10px">
                            <div class="col-sm-4">
-                            <?php $getMegahanaDataImg = getIndividualDetails(10,'content_pages','id')?> 
+                            <?php $getIndex1 =getAllDataCheckActive1('content_pages','0',10);
+                                  $getMegahanaDataImg = $getIndex1->fetch_assoc(); ?>
                             <img src="<?php echo $base_url .'uploads/content_images/'.$getMegahanaDataImg['image'] ?>" alt="">
                            </div>
                             <?php echo $getMegahanaData['description']; ?>

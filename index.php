@@ -65,14 +65,17 @@
 
 </div>
     <!--Start welcome section-->
-   <?php $getIndex = getIndividualDetails(3,'content_pages','id')?>
+    <?php $getIndex =getAllDataCheckActive1('content_pages','0',3);
+          $getChoose1 = $getIndex->fetch_assoc(); ?>
+    ?>
+
     <div class="sections-wrapper">
        <section class="sec-pad">
      
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-sm-12">
-                        <?php echo $getIndex['description']; ?>
+                        <?php echo $getChoose1['description']; ?>
                     </div>
                 </div>
 

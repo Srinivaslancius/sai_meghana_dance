@@ -3,8 +3,8 @@
      <div class="site-content">
         <div class="panel panel-default panel-table">
           <div class="panel-heading">
-            <a href="add_photo_gallery.php" style="float:right">Add Photo Gallery</a>
-            <h3 class="m-t-0 m-b-5">Photo Gallery</h3>            
+            <a href="add_photo_gallery.php" style="float:right">Add Gallery</a>
+            <h3 class="m-t-0 m-b-5">Gallery</h3>            
           </div>
           <div class="panel-body">
             <div class="table-responsive">
