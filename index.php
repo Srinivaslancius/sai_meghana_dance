@@ -66,7 +66,7 @@
 </div>
     <!--Start welcome section-->
     <?php $getIndex =getAllDataCheckActive1('content_pages','0',3);
-          $getChoose1 = $getIndex->fetch_assoc(); ?>
+          $getChoose1 = $getIndex->fetch_assoc(); 
     ?>
 
     <div class="sections-wrapper">
@@ -74,7 +74,13 @@
      
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 col-sm-12">
+                    <div class="col-lg-12 col-sm-12 text-center">
+                        <h3 style="color:black">WELCOME TO <span class="color-pink"><?php echo $getChoose1['title']; ?></span></h3>
+                    </div>
+                    <div class="col-lg-4 col-sm-4">
+                       <img src="<?php echo $base_url .'uploads/content_images/'.$getChoose1['image'] ?>">
+                    </div>
+                    <div class="col-lg-8 col-sm-8 text-justify">
                         <?php echo $getChoose1['description']; ?>
                     </div>
                 </div>
