@@ -33,7 +33,7 @@
     <!--Main Slider-->
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- Wrapper for slides -->
-    <?php $getBannersData1 = getIndividualDetails(1,'banners','id');?>
+    <?php $getban = "SELECT * FROM banners WHERE status = 0 AND id =9"; $getban2 = $conn->query($getban); $getBannersData1=$getban2->fetch_assoc(); ?>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
          <img src="<?php echo $base_url . 'uploads/banner_images/'.$getBannersData1['banner'] ?>" alt=""  class="slide-image"/>
@@ -41,7 +41,7 @@
           <h1 data-animation="animated flipInX"><?php echo $getBannersData1['title'];?></h1>
           </div>
         </div>
-        <?php $sql = 'SELECT * FROM `banners` WHERE id NOT IN (SELECT id FROM `banners` WHERE id=1)';
+        <?php $sql = 'SELECT * FROM `banners` WHERE id NOT IN (SELECT id FROM `banners` WHERE id=9) AND status = 0';
         $getBanners = $conn->query($sql); while($getBannersData = $getBanners->fetch_assoc()) { ?>
         <div class="item">
          <img src="<?php echo $base_url . 'uploads/banner_images/'.$getBannersData['banner'] ?>" alt=""  class="slide-image"/>
