@@ -26,8 +26,9 @@
     <!--header end-->
 
     <!--Page Title-->
-
-    <?php $getAboutUs = getIndividualDetails(1,'content_pages','id')?>
+    <?php $getIndex =getAllDataCheckActive1('content_pages','0',1);
+          $getAboutUs = $getIndex->fetch_assoc(); ?>
+    ?>
     <section class="page-title inner-baner2" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getAboutUs['image'] ?>);">
         <div class="container">
             <h2><?php echo $getAboutUs['title']; ?></h2>

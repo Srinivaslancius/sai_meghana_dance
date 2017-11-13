@@ -16,7 +16,7 @@
 </head>
 <body>
     <!--header start-->
-	<section id="topbar">
+    <section id="topbar">
        <?php include_once 'top_header.php'; ?>
     </section>
      <header>
@@ -30,7 +30,7 @@
     <!--Page Title-->
     <?php $getGallery = getIndividualDetails(8,'content_pages','id')?>
     <section class="page-title inner-baner1" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getGallery['image'] ?>);">
-	
+    
         <div class="container">
             <h2><?php echo $getGallery['title']; ?></h2>
             <ul class="bread-crumb clearfix">
@@ -40,26 +40,23 @@
         </div>
     </section>
     <!--End Page Title-->
-
+    <?php $getCategories = "SELECT * FROM categories WHERE status = 0 "; 
+            $getAllCategories = $conn->query($getCategories);?>
     <section class="latest-gallery text-center">
-	 <h3 style="color:black">OUR <span class="color-pink">GALLERY</span></h3>		
+     <h3 style="color:black">OUR <span class="color-pink">GALLERY</span></h3>       
         <div class="container"> 
             <ul class="post-filter list-inline">
                 <li class="active" data-filter=".filter-item">
                     <span>All</span>
                 </li>
-                <li data-filter=".Indoor-Services">
-                    <span>Lavanya</span>
-                </li>
-                <li data-filter=".Old-Wiring-Faults">
-                    <span>Rangapravesham</span>
-                </li>
-                <li data-filter=".Out-door-repairing">
-                    <span>Lavanya with her Students</span>
-                </li>
+                <?php $i=1; while($getAllData=$getAllCategories->fetch_assoc()) { ?>
+                <li class="<?php if($i==1) { ?> active <?php } ?>">
+                            <a href="#photo<?php echo $getAllData['id']; ?>" data-toggle="tab" aria-expanded="false"><p><?php echo $getAllData['category_name']; ?></p>
+                            </a>
+                        </li>
+                <?php $i++; } ?>
             </ul>
-            <?php $sql = "SELECT * FROM photo_gallery WHERE status = 0 AND category_id = 1"; 
-            $res = $conn->query($sql);?>
+            
             <div class="row masonary-layout filter-layout">
                  <div class="col-md-4 col-sm-4 col-xs-12 filter-item">
                     <div class="single-item">
@@ -78,9 +75,10 @@
                         
                     </div>
                 </div>
-
+                <?php $sql = "SELECT * FROM photo_gallery WHERE status = 0 AND category_id = 1 ";
+                     $res = $conn->query($sql);?>
                 <?php while ($row = $res->fetch_assoc()) { ?>
-                 <div class="col-md-4 col-sm-4 col-xs-12 filter-item Indoor-Services">
+                 <div class="col-md-4 col-sm-4 col-xs-12" id="photo1">
                     <div class="single-item">
                         <div class="img-box">
                             <img src="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row['image'] ?>" alt="Awesome Image"/>
@@ -99,9 +97,9 @@
                 </div>
                 <?php } ?>
 
-                <?php $sql = "SELECT * FROM photo_gallery WHERE status = 0 AND category_id = 2"; 
+                <?php $sql = "SELECT * FROM photo_gallery WHERE status = 0 AND category_id = 2 "; 
                     $res = $conn->query($sql); while ($row = $res->fetch_assoc()) { ?>
-				<div class="col-md-4 col-sm-4 col-xs-12 filter-item Old-Wiring-Faults">
+                <div class="col-md-4 col-sm-4 col-xs-12" id="photo2">
                      <div class="single-item">
                         <div class="img-box">
                             <img src="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row['image'] ?>" alt="Awesome Image"/>
@@ -121,9 +119,10 @@
                 <?php } ?>
 
 
-                <?php $sql = "SELECT * FROM photo_gallery WHERE status = 0 AND category_id = 3"; 
-                    $res = $conn->query($sql); while ($row = $res->fetch_assoc()) { ?>
-				<div class="col-md-4 col-sm-4 col-xs-12 filter-item Out-door-repairing">
+                <?php $sql = "SELECT * FROM photo_gallery WHERE status = 0 AND category_id = 3 "; 
+                    $res = $conn->query($sql); 
+                    while ($row = $res->fetch_assoc()) { ?>
+                <div class="col-md-4 col-sm-4 col-xs-12 filter-item" id="photo3">
                      <div class="single-item">
                         <div class="img-box">
                             <img src="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row['image'] ?>" alt="Awesome Image"/>
