@@ -4,7 +4,7 @@
             <div class="footer-btm">
                 <div class="container">
                     <div class="row">
-					  <div class="col-md-4 col-sm-4 col-xs-12">
+					  <div class="col-md-3 col-sm-3 col-xs-12">
 					  </div>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <center><div class="create-by">
@@ -12,7 +12,7 @@
 								 © Copyright 2017 | Designed By <a target="_blank" href="https://www.lanciussolutions.com/"> Lancius Solutions</a>
                             </div></center>
                         </div>
-						 <div class="col-md-4 col-sm-4 col-xs-12">
+						 <div class="col-md-3 col-sm-3 col-xs-12">
 					  </div>
                     </div>
                 </div>
