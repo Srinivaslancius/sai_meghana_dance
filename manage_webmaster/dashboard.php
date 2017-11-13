@@ -27,7 +27,7 @@
               </div>
             </div>
           </a>
-          <a href="gallery.php">
+          <a href="photo_gallery.php">
             <div class="col-md-4 col-sm-5">
               <div class="widget widget-tile-2 bg-primary m-b-30">
                 <div class="wt-content p-a-20 p-b-50">
