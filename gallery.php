@@ -28,7 +28,9 @@
     <!--header end-->
 
     <!--Page Title-->
-    <?php $getGallery = getIndividualDetails(8,'content_pages','id')?>
+    <?php $getIndex =getAllDataCheckActive1('content_pages','0',8);
+          $getGallery = $getIndex->fetch_assoc(); 
+    ?>
     <section class="page-title inner-baner1" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getGallery['image'] ?>);">
     
         <div class="container">
@@ -42,7 +44,7 @@
     <!--End Page Title-->
 
     <section class="latest-gallery text-center">
-     <h3 style="color:black">OUR <span class="color-pink">GALLERY</span></h3>       
+     <h3 style="color:black">OUR <span class="color-pink"><?php echo $getGallery['title']; ?></span></h3>       
         <div class="container"> 
             <ul class="post-filter list-inline">
                 <li class="active" data-filter=".filter-item">
