@@ -60,24 +60,7 @@
             </ul>
             <?php $sql = "SELECT * FROM photo_gallery WHERE status = 0 AND category_id = 1"; 
             $res = $conn->query($sql);?>
-            <div class="row masonary-layout filter-layout">
-                 <div class="col-md-4 col-sm-4 col-xs-12 filter-item">
-                    <div class="single-item">
-                        <div class="img-box">
-                            <img src="uploads/photo_gallery_images/g1.jpg" alt="Awesome Image"/>
-                            <div class="overlay">
-                                <div class="inner">
-                                    <div class="social">
-                                        <a href="img/lavanya/1.jpg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
+            <div class="row masonary-layout filter-layout">                
 
                 <?php while ($row = $res->fetch_assoc()) { ?>
                  <div class="col-md-4 col-sm-4 col-xs-12 filter-item Indoor-Services">

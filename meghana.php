@@ -25,7 +25,7 @@
     </header>
     <!--Page Title-->
     <?php $getIndex =getAllDataCheckActive1('content_pages','0',2);
-          $getMegahanaData = $getIndex->fetch_assoc(); ?>
+          $getMegahanaData = $getIndex->fetch_assoc(); 
     ?>
     <section class="page-title inner-baner" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getMegahanaData['image'] ?>);">
         <div class="container">            
@@ -44,9 +44,9 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                    
-                    <div class="team-single">                      
+                <div class="team-single">                      
                         <div class="player-name text-center">
-                           <h3 style="color:black">ABOUT <span class="color-pink"> MEGHANA YAMMANUR</span></h3>
+                           <h3 style="color:black">ABOUT <span class="color-pink"> <?php echo $getMegahanaData['title']; ?></span></h3>
                            <div class="row" style="padding-left:10px">
                            <div class="col-sm-4">
                             <?php $getIndex1 =getAllDataCheckActive1('content_pages','0',10);

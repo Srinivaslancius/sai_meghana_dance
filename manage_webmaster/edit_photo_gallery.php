@@ -6,6 +6,7 @@ $pid = $_GET['pid'];
     } else  {
             $category_id = $_POST['category_id'];
             $title = $_POST['title'];
+            $status = $_POST['status'];
             if($_FILES["fileToUpload"]["name"]!='') {
               $fileToUpload = $_FILES["fileToUpload"]["name"];
               $target_dir = "../uploads/photo_gallery_images/";
