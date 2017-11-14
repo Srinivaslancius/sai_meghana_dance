@@ -129,6 +129,19 @@
                 
             </div><!-- /.row -->
         </div><!-- /.container -->
+        <div class="container">
+            <center><h2>Videos</h2></center>
+            <div>
+                <div class="row">
+                <?php $sql = "SELECT * FROM videos WHERE status = 0";
+                    $res = $conn->query($sql); while($getVideos = $res->fetch_assoc()) { ?>
+                    <div class="col-sm-4">
+                        <iframe width="380" height="300"  style="margin-bottom:20px" src="<?php echo $getVideos['url'];?>"></iframe>
+                    </div>
+                <?php } ?>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
         </section>
         <!-- Start Footer -->    
     <footer>
