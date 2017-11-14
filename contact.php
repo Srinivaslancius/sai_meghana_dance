@@ -150,7 +150,12 @@ if(mail($to,$subject,$message,$headers)) {
     </section>
     <!--End Page Title-->
 
-    <div class="sections-wrapper sec-pad blog-back-bg">
+    <?php $getcntimg1 =getAllDataCheckActive1('content_pages','0',11);
+    $getContactimgData1 = $getcntimg1->fetch_assoc(); ?>
+
+    <?php $getcntimg2 =getAllDataCheckActive1('content_pages','0',12);
+    $getContactimgData2 = $getcntimg2->fetch_assoc(); ?>
+    <div class="sections-wrapper sec-pad blog-back-bg" style="background-image: url(<?php echo $base_url .'uploads/content_images/'.$getContactimgData1['image'] ?>),url(<?php echo $base_url .'uploads/content_images/'.$getContactimgData2['image'] ?>);">
         <div class="container">
             <div class="section-title title-padd-btm">
 			  <center><h3 style="color:black">GET IN<span class="color-pink"> TOUCH</span></h3></center>
