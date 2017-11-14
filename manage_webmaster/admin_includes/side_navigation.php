@@ -61,6 +61,14 @@
                 <span class="menu-text">Gallery</span>
               </a>
             </li>
+            <li  class="<?php if($page_name == 'videos.php' || $page_name == 'add_videos.php' || $page_name == 'edit_videos.php') { echo "active"; } ?>">
+              <a href="videos.php" aria-haspopup="true">
+                <span class="menu-icon">
+                   <i class="zmdi zmdi-image zmdi-hc-fw"></i>
+                </span> 
+                <span class="menu-text">Videos</span>
+              </a>
+            </li>
             <li  class="<?php if($page_name == 'content_pages.php' || $page_name == 'add_content_pages.php' || $page_name == 'edit_content_pages.php') { echo "active"; } ?>">
               <a href="content_pages.php" aria-haspopup="true">
                 <span class="menu-icon">
