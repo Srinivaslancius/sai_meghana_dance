@@ -3,7 +3,7 @@
      <div class="site-content">
         <div class="panel panel-default panel-table">
           <div class="panel-heading">
-            <a href="add_menu.php" style="float:right">Add Menu Items</a>
+            <!-- <a href="add_menu.php" style="float:right">Add Menu Items</a> -->
             <h3 class="m-t-0 m-b-5">Menu Items</h3>            
           </div>
           <div class="panel-body">
