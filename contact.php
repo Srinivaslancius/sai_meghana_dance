@@ -139,18 +139,16 @@ if(mail($to,$subject,$message,$headers)) {
     <?php $getIndex1 =getAllDataCheckActive1('content_pages','0',9);
                                   $getContactData = $getIndex1->fetch_assoc(); ?>
 
-    <section class="page-title inner-baner3" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getContactData['image'] ?>);">
-        <div class="container">
-            <?php $getChooseData2 = getAllDataCheckActive1('menu_items','0',5);
+    <section class="container-fluid page-title">
+        <div class="row">
+            <img src="<?php echo $base_url .'uploads/content_images/'.$getContactData['image'] ?>" class="img-responsive">
+        </div>
+        <?php $getChooseData2 = getAllDataCheckActive1('menu_items','0',5);
                 $getChoose2 = $getChooseData2->fetch_assoc(); ?>
-            <h2><?php echo $getChoose2['menu_name']; ?></h2>
-            <ul class="bread-crumb clearfix">
-                <!-- <li><a href="index.php">Home</a></li>
-                <li class="active"><?php echo $getContactData['title']; ?></li> -->
-            </ul>
+        <div class="top-header-div">
+            <p><?php echo $getChoose2['menu_name']; ?></p>
         </div>
     </section>
-    <!--End Page Title-->
 
     <?php $getcntimg1 =getAllDataCheckActive1('content_pages','0',11);
     $getContactimgData1 = $getcntimg1->fetch_assoc(); ?>
