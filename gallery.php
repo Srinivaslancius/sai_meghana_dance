@@ -32,13 +32,12 @@
           $getGallery = $getIndex->fetch_assoc(); 
     ?>
     <section class="page-title inner-baner1" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getGallery['image'] ?>);">
-        <?php $getChooseData2 = getAllDataCheckActive1('menu_items','0',4);
-$getChoose2 = $getChooseData2->fetch_assoc(); ?>
+    
         <div class="container">
-            <h2><?php echo $getChoose2['menu_name']; ?></h2>
+            <h2><?php echo $getGallery['title']; ?></h2>
             <ul class="bread-crumb clearfix">
-                <!-- <li><a href="index.php">Home</a></li>
-                <li class="active"><?php echo $getGallery['title']; ?></li> -->
+                <li><a href="index.php">Home</a></li>
+                <li class="active"><?php echo $getGallery['title']; ?></li>
             </ul>
         </div>
     </section>
@@ -48,48 +47,53 @@ $getChoose2 = $getChooseData2->fetch_assoc(); ?>
      <h3 style="color:black">OUR <span class="color-pink"><?php echo $getGallery['title']; ?></span></h3>       
         <div class="container"> 
             <ul class="post-filter list-inline">
-                <?php 
-                    $getQry = "SELECT * FROM categories WHERE status = 0 ";
-                    $excQry = $conn->query($getQry);
-                ?>  
-                    <?php while($getCat = $excQry->fetch_assoc()){ ?>  
-                        <li class="<?php if($getCat['id'] == 1) { echo "active"; } ?>" data-filter=".<?php echo $getCat['id'];?>">
-                            <span><?php echo $getCat['category_name'];?></span>
-                        </li>
-                   <?php  } ?>                
-                
-                <li data-filter=".Out-door-videos">
+                <li data-filter=".firststep">
+                    <span>Guru</span>
+                </li>
+                <li data-filter=".Indoor-Services">
+                    <span>Meghana</span>
+                </li>
+                <li data-filter=".Old-Wiring-Faults">
+                    <span>Students Rangapravesham</span>
+                </li>
+                <li data-filter=".Out-door-repairing">
                     <span>Videos</span>
                 </li>
             </ul>
+
+            <?php $getgalleImg =getAllDataCheckActive1('content_pages','0',12);
+                  $getimg = $getgalleImg->fetch_assoc(); 
+            ?>
+
+            <div class="firstimg"><img src="<?php echo $base_url .'uploads/content_images/'.$getimg['image'] ?>"></div>
             
-            <div class="row masonary-layout filter-layout">                
-                <?php $sql1 = "SELECT * FROM photo_gallery WHERE status = 0 AND id = 9 AND category_id = 1"; 
-                    $res1 = $conn->query($sql1);
-                    $row1 = $res1->fetch_assoc();
-                ?>
-                <div class="col-md-3 col-sm-3 col-xs-12"></div>
-                <div class="col-md-6 col-sm-6 col-xs-12 <?php echo $row1['category_id'];?>">
+            <div class="row masonary-layout filter-layout">  
+
+                <?php $sql = "SELECT * FROM photo_gallery WHERE status = 0 AND category_id = 1"; 
+                 $res = $conn->query($sql);?>  
+                <?php while ($row = $res->fetch_assoc()) { ?>
+                 <div class="col-md-4 col-sm-4 col-xs-12 firststep">
                     <div class="single-item">
                         <div class="img-box">
-                            <img src="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row1['image'] ?>" style="width:400px;height:400px;" alt="Awesome Image"/>
+                            <img src="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row['image'] ?>" alt="Awesome Image"/>
                             <div class="overlay">
                                 <div class="inner">
                                     <div class="social">
-                                        <a href="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row1['image'] ?>" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
+                                        <a href="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row['image'] ?>" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="flaticon-add"></i></a>  
                                     </div>
                                     
                                 </div>
                             </div>
                             
                         </div>
+                        
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-3 col-xs-12"></div>
+                <?php } ?>
 
                 <?php $sql = "SELECT * FROM photo_gallery WHERE status = 0 AND category_id = 2"; 
                     $res = $conn->query($sql); while ($row = $res->fetch_assoc()) { ?>
-                <div class="col-md-4 col-sm-4 col-xs-12 <?php echo $row['category_id'];?>">
+                <div class="col-md-4 col-sm-4 col-xs-12 Indoor-Services">
                      <div class="single-item">
                         <div class="img-box">
                             <img src="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row['image'] ?>" alt="Awesome Image"/>
@@ -111,7 +115,7 @@ $getChoose2 = $getChooseData2->fetch_assoc(); ?>
 
                 <?php $sql = "SELECT * FROM photo_gallery WHERE status = 0 AND category_id = 3"; 
                     $res = $conn->query($sql); while ($row = $res->fetch_assoc()) { ?>
-                <div class="col-md-4 col-sm-4 col-xs-12 <?php echo $row['category_id'];?>">
+                <div class="col-md-4 col-sm-4 col-xs-12 Old-Wiring-Faults">
                      <div class="single-item">
                         <div class="img-box">
                             <img src="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row['image'] ?>" alt="Awesome Image"/>
@@ -129,28 +133,25 @@ $getChoose2 = $getChooseData2->fetch_assoc(); ?>
                     </div>
                 </div>
                 <?php } ?>
-                <div class="col-md-4 col-sm-4 col-xs-12 filter-item Out-door-videos">
-                    <div class="container">                        
-                        <div>
-                            <div class="row">
-                            <?php $sql = "SELECT * FROM videos WHERE status = 0";
-                                $res = $conn->query($sql); while($getVideos = $res->fetch_assoc()) {  ?>
-                                <div class="col-sm-4">
-                                    <?php 
-                                    $url = $getVideos['url'];
-                                    preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $url, $matches);
-                                    $vendid = $matches[1];
-                                    ?>
-                                    <iframe width="380" height="300" style="margin-bottom:20px"  src="https://www.youtube.com/embed/<?php echo $vendid ?>?rel=0" allowfullscreen></iframe>
-                                </div>
-                            <?php } ?>
-                            </div>
-                        </div><!-- /.row -->
-                    </div><!-- /.container -->
-                </div>
+
+                <?php $sql = "SELECT * FROM videos WHERE status = 0";
+                    $res = $conn->query($sql); while($getVideos = $res->fetch_assoc()) {  ?>
+                    <div class="col-md-4 col-sm-4 col-xs-12 Out-door-repairing">
+                         <div class="col-sm-4">
+                            <?php 
+                            $url = $getVideos['url'];
+                            preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $url, $matches);
+                            $vendid = $matches[1];
+                            ?>
+                            <iframe width="380" height="300" style="margin-bottom:20px"  src="https://www.youtube.com/embed/<?php echo $vendid ?>?rel=0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                <?php } ?>
+
+                
             </div><!-- /.row -->
         </div><!-- /.container -->
-        
+      
         </section>
         <!-- Start Footer -->    
     <footer>
