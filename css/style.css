@@ -1227,18 +1227,46 @@ footer .social-links-footer a:hover {
 
 /* Strat inner banner css*/
 
-.inner-baner{
-   height:340px;
+@media screen and (max-width:414px) {
+  .top-header-div{
+    position: absolute;
+    top: -40px;
+    left: 10px;
+  }
+  .page-title p{    
+    font-size: 18px;
+    padding:80px 0 40px;
+  }
+  .page-title img{    
+    height:120px;
+  }
+  
 }
-.inner-baner1{
-   height:340px;
+
+@media screen and (min-width: 415px) and (max-width: 550px){
+  .top-header-div{
+    position: absolute;
+    top: -20px;
+    left: 40px;
+  }
+  .page-title p{    
+    font-size: 25px;
+    padding: 80px 0 50px;
+  } 
+  
 }
-.inner-baner2{
-   height:340px;
+@media screen and (min-width:870px) {
+  .top-header-div{
+    position: absolute;
+    top: 0;
+    left: 140px;
+  }
+  .page-title p{
+    font-size: 30px;
+    padding: 270px 0 60px;
+  }
 }
-.inner-baner3{
-    height:340px;
-}
+
 .page-title{
   position:relative;
   text-align:center;
@@ -1255,15 +1283,14 @@ footer .social-links-footer a:hover {
   height:100%;
   background-color:rgba(0,0,0,0.3);
 }
-.page-title h2{
-  position:relative;
-  font-size:30px;
+.page-title p{
+  position:relative;  
   font-weight:700;
-  color:#ffffff;
-  padding:270px 0px 40px;
+  color:#ffffff;  
   text-transform:uppercase;
-  text-align: left;
+  text-align: left;  
 }
+
 .page-title .bread-crumb{
   position:relative;
   display:inline-block;

@@ -29,16 +29,16 @@
 
     <!--Page Title-->
     <?php $getIndex =getAllDataCheckActive1('content_pages','0',8);
-          $getGallery = $getIndex->fetch_assoc(); 
-    ?>
-    <section class="page-title inner-baner1" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getGallery['image'] ?>);">
-    
-        <div class="container">
-            <h2><?php echo $getGallery['title']; ?></h2>
-            <ul class="bread-crumb clearfix">
-                <li><a href="index.php">Home</a></li>
-                <li class="active"><?php echo $getGallery['title']; ?></li>
-            </ul>
+                                  $getGallery = $getIndex->fetch_assoc(); ?>
+
+    <section class="container-fluid page-title">
+        <div class="row">
+            <img src="<?php echo $base_url .'uploads/content_images/'.$getGallery['image'] ?>" class="img-responsive">
+        </div>
+        <?php $getChooseData2 = getAllDataCheckActive1('menu_items','0',3);
+                $getChoose2 = $getChooseData2->fetch_assoc(); ?>
+        <div class="top-header-div">
+            <p><?php echo $getChoose2['menu_name']; ?></p>
         </div>
     </section>
     <!--End Page Title-->
