@@ -27,9 +27,11 @@
     <?php $getIndex =getAllDataCheckActive1('content_pages','0',2);
           $getMegahanaData = $getIndex->fetch_assoc(); 
     ?>
+    <?php $getChooseData2 = getAllDataCheckActive1('menu_items','0',3);
+$getChoose2 = $getChooseData2->fetch_assoc(); ?>
     <section class="page-title inner-baner" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getMegahanaData['image'] ?>);">
         <div class="container">            
-            <h2><?php echo $getMegahanaData['title']; ?></h2>
+            <h2><?php echo $getChoose2['menu_name']; ?></h2>
             <ul class="bread-crumb clearfix">
                 <!-- <li><a href="index.php">Home</a></li>
                 <li class="active"><?php echo $getMegahanaData['title']; ?></li> -->

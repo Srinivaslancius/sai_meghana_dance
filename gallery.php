@@ -32,9 +32,10 @@
           $getGallery = $getIndex->fetch_assoc(); 
     ?>
     <section class="page-title inner-baner1" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getGallery['image'] ?>);">
-    
+        <?php $getChooseData2 = getAllDataCheckActive1('menu_items','0',4);
+$getChoose2 = $getChooseData2->fetch_assoc(); ?>
         <div class="container">
-            <h2><?php echo $getGallery['title']; ?></h2>
+            <h2><?php echo $getChoose2['menu_name']; ?></h2>
             <ul class="bread-crumb clearfix">
                 <!-- <li><a href="index.php">Home</a></li>
                 <li class="active"><?php echo $getGallery['title']; ?></li> -->
