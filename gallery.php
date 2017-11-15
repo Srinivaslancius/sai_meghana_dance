@@ -35,7 +35,7 @@
         <div class="row">
             <img src="<?php echo $base_url .'uploads/content_images/'.$getGallery['image'] ?>" class="img-responsive">
         </div>
-        <?php $getChooseData2 = getAllDataCheckActive1('menu_items','0',3);
+        <?php $getChooseData2 = getAllDataCheckActive1('menu_items','0',4);
                 $getChoose2 = $getChooseData2->fetch_assoc(); ?>
         <div class="top-header-div">
             <p><?php echo $getChoose2['menu_name']; ?></p>
