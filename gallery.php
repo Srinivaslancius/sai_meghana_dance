@@ -130,13 +130,18 @@
             </div><!-- /.row -->
         </div><!-- /.container -->
         <div class="container">
-            <center><h2>Videos</h2></center>
+            <center><h2><span class="color-pink">Videos</span></h2></center>
             <div>
                 <div class="row">
                 <?php $sql = "SELECT * FROM videos WHERE status = 0";
-                    $res = $conn->query($sql); while($getVideos = $res->fetch_assoc()) { ?>
+                    $res = $conn->query($sql); while($getVideos = $res->fetch_assoc()) {  ?>
                     <div class="col-sm-4">
-                        <iframe width="380" height="300"  style="margin-bottom:20px" src="<?php echo $getVideos['url'];?>"></iframe>
+                        <?php 
+                        $url = $getVideos['url'];
+                        preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $url, $matches);
+                        $vendid = $matches[1];
+                        ?>
+                        <iframe width="380" height="300" style="margin-bottom:20px"  src="https://www.youtube.com/embed/<?php echo $vendid ?>?rel=0" allowfullscreen></iframe>
                     </div>
                 <?php } ?>
                 </div>

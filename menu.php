@@ -20,7 +20,7 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav" data-in="" data-out="">
                         <?php while($getCat = $getMenuItems->fetch_assoc()) {?>
-                        <li><a href="/menu_url.php"><?php echo $getCat['menu_name']; ?></a></li>
+                        <li><a href="<?php echo $getCat['menu_url']; ?>"><?php echo $getCat['menu_name']; ?></a></li>
                         <?php  } ?>
                     </ul>
                 </div><!-- /.navbar-collapse -->
