@@ -103,7 +103,11 @@ function galleryMasonaryLayout() {
     }
 
     if ($('.post-filter').length) {
+        $('.filter-layout').hide();
         $('.post-filter li').children('span').click(function() {
+            $('.filter-layout').show();
+            $('.firstimg').hide();
+            
             var Self = $(this);
             var selector = Self.parent().attr('data-filter');
             $('.post-filter li').children('span').parent().removeClass('active');
