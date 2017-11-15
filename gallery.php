@@ -36,8 +36,8 @@
         <div class="container">
             <h2><?php echo $getGallery['title']; ?></h2>
             <ul class="bread-crumb clearfix">
-                <li><a href="index.php">Home</a></li>
-                <li class="active"><?php echo $getGallery['title']; ?></li>
+                <!-- <li><a href="index.php">Home</a></li>
+                <li class="active"><?php echo $getGallery['title']; ?></li> -->
             </ul>
         </div>
     </section>

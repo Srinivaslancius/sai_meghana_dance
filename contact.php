@@ -143,8 +143,8 @@ if(mail($to,$subject,$message,$headers)) {
         <div class="container">
             <h2><?php echo $getContactData['title']; ?></h2>
             <ul class="bread-crumb clearfix">
-                <li><a href="index.php">Home</a></li>
-                <li class="active"><?php echo $getContactData['title']; ?></li>
+                <!-- <li><a href="index.php">Home</a></li>
+                <li class="active"><?php echo $getContactData['title']; ?></li> -->
             </ul>
         </div>
     </section>

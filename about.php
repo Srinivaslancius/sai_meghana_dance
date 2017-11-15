@@ -33,8 +33,8 @@
         <div class="container">
             <h2>About Us</h2>
             <ul class="bread-crumb clearfix">
-                <li><a href="index.php">Home</a></li>
-                <li class="active">About Us</li>
+                <!-- <li><a href="index.php">Home</a></li>
+                <li class="active">About Us</li> -->
             </ul>
         </div>
     </section>

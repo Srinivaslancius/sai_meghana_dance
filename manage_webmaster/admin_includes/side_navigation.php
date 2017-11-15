@@ -50,7 +50,7 @@
                 <span class="menu-icon">
                    <i class="zmdi zmdi-collection-image  zmdi-hc-fw"></i>
                 </span> 
-                <span class="menu-text">menu</span>
+                <span class="menu-text">Menu</span>
               </a>
             </li>
             <li  class="<?php if($page_name == 'categories.php' || $page_name == 'add_categories.php' || $page_name == 'edit_categories.php') { echo "active"; } ?>">
