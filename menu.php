@@ -15,13 +15,13 @@
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
+                <?php $getAllMenuItems = "SELECT * FROM menu_items WHERE status=0 ";
+                $getMenuItems = $conn->query($getAllMenuItems); ?>
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav" data-in="" data-out="">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="about.php">About Us</a></li>
-                        <li><a href="meghana.php">Meghana</a></li>
-                        <li><a href="gallery.php">Gallery</a></li>
-                        <li><a href="contact.php">Contact Us</a></li>
+                        <?php while($getCat = $getMenuItems->fetch_assoc()) {?>
+                        <li><a href="/menu_url.php"><?php echo $getCat['menu_name']; ?></a></li>
+                        <?php  } ?>
                     </ul>
                 </div><!-- /.navbar-collapse -->
 				</div>

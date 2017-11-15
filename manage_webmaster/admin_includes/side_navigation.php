@@ -45,6 +45,14 @@
                 <span class="menu-text">Banners</span>
               </a>
             </li>
+            <li  class="<?php if($page_name == 'menu.php' || $page_name == 'add_menu.php' || $page_name == 'edit_menu.php') { echo "active"; } ?>">
+              <a href="menu.php" aria-haspopup="true">
+                <span class="menu-icon">
+                   <i class="zmdi zmdi-collection-image  zmdi-hc-fw"></i>
+                </span> 
+                <span class="menu-text">menu</span>
+              </a>
+            </li>
             <li  class="<?php if($page_name == 'categories.php' || $page_name == 'add_categories.php' || $page_name == 'edit_categories.php') { echo "active"; } ?>">
               <a href="categories.php" aria-haspopup="true">
                 <span class="menu-icon">
