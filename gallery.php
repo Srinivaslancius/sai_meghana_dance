@@ -29,17 +29,16 @@
 
     <!--Page Title-->
     <?php $getIndex =getAllDataCheckActive1('content_pages','0',8);
-          $getGallery = $getIndex->fetch_assoc(); 
-    ?>
-    <section class="page-title inner-baner1" style="background-image:url(<?php echo $base_url .'uploads/content_images/'.$getGallery['image'] ?>);">
+                                  $getGallery = $getIndex->fetch_assoc(); ?>
+
+    <section class="container-fluid page-title">
+        <div class="row">
+            <img src="<?php echo $base_url .'uploads/content_images/'.$getGallery['image'] ?>" class="img-responsive">
+        </div>
         <?php $getChooseData2 = getAllDataCheckActive1('menu_items','0',4);
-$getChoose2 = $getChooseData2->fetch_assoc(); ?>
-        <div class="container">
-            <h2><?php echo $getChoose2['menu_name']; ?></h2>
-            <ul class="bread-crumb clearfix">
-                <!-- <li><a href="index.php">Home</a></li>
-                <li class="active"><?php echo $getGallery['title']; ?></li> -->
-            </ul>
+                $getChoose2 = $getChooseData2->fetch_assoc(); ?>
+        <div class="top-header-div">
+            <p><?php echo $getChoose2['menu_name']; ?></p>
         </div>
     </section>
     <!--End Page Title-->
@@ -48,25 +47,32 @@ $getChoose2 = $getChooseData2->fetch_assoc(); ?>
      <h3 style="color:black">OUR <span class="color-pink"><?php echo $getGallery['title']; ?></span></h3>       
         <div class="container"> 
             <ul class="post-filter list-inline">
-                <li class="active" data-filter=".filter-item">
-                    <span>All</span>
+                <li data-filter=".firststep">
+                    <span>Guru</span>
                 </li>
                 <li data-filter=".Indoor-Services">
-                    <span>Lavanya</span>
+                    <span>Meghana</span>
                 </li>
                 <li data-filter=".Old-Wiring-Faults">
-                    <span>Rangapravesham</span>
+                    <span>Students Rangapravesham</span>
                 </li>
                 <li data-filter=".Out-door-repairing">
-                    <span>Lavanya with her Students</span>
+                    <span>Videos</span>
                 </li>
             </ul>
-            <?php $sql = "SELECT * FROM photo_gallery WHERE status = 0 AND category_id = 1"; 
-            $res = $conn->query($sql);?>
-            <div class="row masonary-layout filter-layout">                
 
+            <?php $getgalleImg =getAllDataCheckActive1('content_pages','0',12);
+                  $getimg = $getgalleImg->fetch_assoc(); 
+            ?>
+
+            <div class="firstimg"><img src="<?php echo $base_url .'uploads/content_images/'.$getimg['image'] ?>"></div>
+            
+            <div class="row masonary-layout filter-layout">  
+
+                <?php $sql = "SELECT * FROM photo_gallery WHERE status = 0 AND category_id = 1"; 
+                 $res = $conn->query($sql);?>  
                 <?php while ($row = $res->fetch_assoc()) { ?>
-                 <div class="col-md-4 col-sm-4 col-xs-12 filter-item Indoor-Services">
+                 <div class="col-md-4 col-sm-4 col-xs-12 firststep">
                     <div class="single-item">
                         <div class="img-box">
                             <img src="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row['image'] ?>" alt="Awesome Image"/>
@@ -87,7 +93,7 @@ $getChoose2 = $getChooseData2->fetch_assoc(); ?>
 
                 <?php $sql = "SELECT * FROM photo_gallery WHERE status = 0 AND category_id = 2"; 
                     $res = $conn->query($sql); while ($row = $res->fetch_assoc()) { ?>
-                <div class="col-md-4 col-sm-4 col-xs-12 filter-item Old-Wiring-Faults">
+                <div class="col-md-4 col-sm-4 col-xs-12 Indoor-Services">
                      <div class="single-item">
                         <div class="img-box">
                             <img src="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row['image'] ?>" alt="Awesome Image"/>
@@ -109,7 +115,7 @@ $getChoose2 = $getChooseData2->fetch_assoc(); ?>
 
                 <?php $sql = "SELECT * FROM photo_gallery WHERE status = 0 AND category_id = 3"; 
                     $res = $conn->query($sql); while ($row = $res->fetch_assoc()) { ?>
-                <div class="col-md-4 col-sm-4 col-xs-12 filter-item Out-door-repairing">
+                <div class="col-md-4 col-sm-4 col-xs-12 Old-Wiring-Faults">
                      <div class="single-item">
                         <div class="img-box">
                             <img src="<?php echo $base_url . 'uploads/photo_gallery_images/'.$row['image'] ?>" alt="Awesome Image"/>
@@ -127,27 +133,25 @@ $getChoose2 = $getChooseData2->fetch_assoc(); ?>
                     </div>
                 </div>
                 <?php } ?>
+
+                <?php $sql = "SELECT * FROM videos WHERE status = 0";
+                    $res = $conn->query($sql); while($getVideos = $res->fetch_assoc()) {  ?>
+                    <div class="col-md-4 col-sm-4 col-xs-12 Out-door-repairing">
+                         <div class="col-sm-4">
+                            <?php 
+                            $url = $getVideos['url'];
+                            preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $url, $matches);
+                            $vendid = $matches[1];
+                            ?>
+                            <iframe width="380" height="300" style="margin-bottom:20px"  src="https://www.youtube.com/embed/<?php echo $vendid ?>?rel=0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                <?php } ?>
+
                 
             </div><!-- /.row -->
         </div><!-- /.container -->
-        <div class="container">
-            <center><h2><span class="color-pink">Videos</span></h2></center>
-            <div>
-                <div class="row">
-                <?php $sql = "SELECT * FROM videos WHERE status = 0";
-                    $res = $conn->query($sql); while($getVideos = $res->fetch_assoc()) {  ?>
-                    <div class="col-sm-4">
-                        <?php 
-                        $url = $getVideos['url'];
-                        preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $url, $matches);
-                        $vendid = $matches[1];
-                        ?>
-                        <iframe width="380" height="300" style="margin-bottom:20px"  src="https://www.youtube.com/embed/<?php echo $vendid ?>?rel=0" allowfullscreen></iframe>
-                    </div>
-                <?php } ?>
-                </div>
-            </div><!-- /.row -->
-        </div><!-- /.container -->
+      
         </section>
         <!-- Start Footer -->    
     <footer>
